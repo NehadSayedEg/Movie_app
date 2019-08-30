@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".DetailsActivity"
+    tools:showIn="@layout/activity_details"
+    android:background="@color/backgroundColor"
+
+    >
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:id="@+id/thumbnail_image_header"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:contentDescription="TODO" />
+
+            <com.github.ivbaranov.mfb.MaterialFavoriteButton
+                android:id="@+id/favorite_button"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:padding="@dimen/padding_layout"
+                app:mfb_type="star"
+                android:layout_marginEnd="@dimen/layout_margin_left"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_alignBottom="@+id/thumbnail_image_header"
+                android:outlineSpotShadowColor="@color/colorPrimaryDark"
+                app:mfb_animate_favorite="true"
+                app:mfb_color="white"
+                app:mfb_rotation_duration="400"
+                app:mfb_rotation_angle="360"
+                app:mfb_bounce_duration="300"
+                app:mfb_size="80"
+                android:layout_marginStart="300dp"
+
+
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/title"
+                    android:padding="@dimen/padding_layout"
+                    android:layout_marginLeft="@dimen/layout_margin_left"
+                    android:textSize="25sp"
+                    android:layout_below="@+id/favorite_button"
+                    android:textColor="@color/textColor"
+                    android:textStyle="bold"
+                    android:layout_alignBottom="@+id/favorite_button"
+                    />
+
+
+
+                <TextView
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/userrating"
+                    android:padding="@dimen/padding_layout"
+                    android:layout_toRightOf="@+id/favorite_button"
+                    android:layout_marginLeft="@dimen/layout_margin_left"
+                    android:textSize="22sp"
+                    android:layout_alignBottom="@+id/title"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/releaseDate"
+                    android:layout_marginLeft="@dimen/layout_margin_left"
+                    android:padding="@dimen/padding_layout"
+                    android:textSize="20sp"
+                    android:textColor="@color/textColor"
+                    android:textStyle="bold"
+                    android:layout_alignBottom="@+id/userrating"
+
+                    />
+
+                <TextView
+                    android:layout_width="368dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/plotSynopsis"
+                    android:padding="@dimen/padding_layout"
+                    android:textSize="16sp"
+                    android:textColor="@color/textColor"
+                    android:layout_alignBottom="@+id/releaseDate"
+
+                    />
+
+                <TextView
+                    android:id="@+id/trailer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:text="@string/trailer"
+                    android:textColor="@color/textColor"
+                    android:layout_alignBottom="@+id/plotSynopsis"
+                    android:layout_below="@+id/plotSynopsis"
+
+
+                    />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/trailer_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/trailer"
+                    android:textColor="@color/textColor"
+
+
+
+                    />
+
+                <TextView
+                    android:id="@+id/text_review"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:text="@string/review"
+                    android:layout_below="@+id/trailer_recycler_view"
+                    android:layout_alignBottom="@+id/trailer_recycler_view"
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:textColor="@color/textColor"
+                    />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/review_recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_review"
+                    android:textColor="@color/textColor"
+                    android:background="@color/backgroundColor"
+
+                    />
+            </LinearLayout>
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+</android.support.constraint.ConstraintLayout>
